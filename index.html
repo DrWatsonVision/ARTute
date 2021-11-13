@@ -25,22 +25,24 @@
 <div class="centered">
     <button data-action="change"></button>
 </div>
-</body>-->
+</body>
+preset="custom" 
+url="./assets/pattern-marker.patt"
+
+-->
 
 
 
-<html> <!-- https://ar-js-org.github.io/AR.js-Docs/-->
+<html> <!-- https://ar-js-org.github.io/AR.js-Docs/ https://medium.com/chialab-open-source/ar-js-the-simpliest-way-to-get-cross-browser-ar-on-the-web-8f670dd45462-->
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs>
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'></a-scene>>
       <a-marker 
-        type="pattern"
-        preset="custom"
-        url="./assets/pattern-marker.patt"
+        type='barcode' value='6'
         >
-                <a-entity
+        <a-entity
           position="0 0 0"
           scale="0.05 0.05 0.05"
           gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
